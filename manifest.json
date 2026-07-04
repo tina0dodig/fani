@@ -1,0 +1,10 @@
+{
+  "name": "Apartman vodič Makarska",
+  "short_name": "Apartman vodič",
+  "description": "Digitalni vodič za goste apartmana u Makarskoj.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#ffffff",
+  "orientation": "portrait"
+}

@@ -1,0 +1,305 @@
+:root {
+  --bg: #f7f3ec;
+  --card: #ffffff;
+  --text: #151922;
+  --muted: #667085;
+  --primary: lightblue;
+  --primary-dark: rgb(142, 196, 214);
+  --dark:rgb(142, 196, 214);
+  --border: #e7e2da;
+  --warning: red;
+  --success: #15803d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:
+        linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
+        url("assets/ma4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+.screen {
+  display: none;
+  min-height: 100vh;
+  padding: 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen.active {
+  display: flex;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--card);
+  border-radius: 30px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 24px 70px rgba(17, 24, 39, 0.12);
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+}
+
+.card.wide {
+  max-width: 840px;
+}
+
+.hero-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  background: #ddd;
+}
+
+.card-content {
+  padding: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+button {
+  font-family: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.language-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.language-grid button,
+.primary-btn,
+.secondary-btn {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 18px;
+  color: white;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.language-grid button,
+.primary-btn {
+  background: var(--primary);
+}
+
+.language-grid button:hover,
+.primary-btn:hover {
+  background: var(--primary-dark);
+}
+
+.secondary-btn {
+  margin-top: 18px;
+  background: var(--dark);
+}
+
+.notice {
+  margin: 22px 0;
+  padding: 16px;
+  border-radius: 20px;
+  background: #eff6ff;
+  text-align: left;
+}
+
+.notice strong {
+  color: var(--primary);
+}
+
+.notice p {
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+
+.category-grid,
+.places-grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.image-card {
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: white;
+  color: var(--text);
+  border: 1px solid var(--border);
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+}
+
+.image-card:active {
+  transform: scale(0.985);
+}
+
+.image-card img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  display: block;
+  background: #e5e7eb;
+}
+
+.image-card span {
+  display: block;
+  padding: 17px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.map-screen {
+    background: none;
+    padding: 0;
+}
+
+
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+.map-topbar {
+  position: fixed;
+  z-index: 999;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.map-topbar button {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 16px;
+  background: var(--dark);
+  color: white;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.map-panel {
+  position: fixed;
+  z-index: 999;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 16px;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.22);
+}
+
+.map-panel h3 {
+  margin-bottom: 6px;
+}
+
+.map-panel p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.status-warning {
+  color: var(--warning);
+}
+
+.status-success {
+  color: var(--success);
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+}
+
+@media (min-width: 720px) {
+  .category-grid,
+  .places-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .language-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .card {
+    padding: 22px;
+    border-radius: 26px;
+  }
+
+  .hero-card {
+    padding: 0;
+  }
+
+  .hero-img {
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 33px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .image-card img {
+    height: 160px;
+  }
+}

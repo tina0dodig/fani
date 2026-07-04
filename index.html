@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Apartmani Fani</title>
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<main class="app">
+
+  <section id="languageScreen" class="screen active">
+    <div class="card hero-card">
+      <img src="assets/apartman.jpg" alt="Apartman Makarska" class="hero-img" />
+      <div class="card-content">
+        <p class="eyebrow">GUEST GUIDE</p>
+        <h1>Apartmans Fani</h1>
+        <p>Choose your language:</p>
+
+        <div class="language-grid">
+          <button onclick="setLanguage('hr')">Hrvatski</button>
+          <button onclick="setLanguage('en')">English</button>
+          <button onclick="setLanguage('de')">Deutsch</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="infoScreen" class="screen">
+    <div class="card">
+      <p class="eyebrow" id="infoEyebrow"></p>
+      <h2 id="infoTitle"></h2>
+      <p id="infoText"></p>
+
+      <div class="notice">
+        <strong id="privacyTitle"></strong>
+        <p id="privacyText"></p>
+      </div>
+
+      <button class="primary-btn" onclick="showMenu()" id="startButton"></button>
+    </div>
+  </section>
+
+  <section id="menuScreen" class="screen">
+    <div class="card wide">
+      <p class="eyebrow" id="menuEyebrow"></p>
+      <h2 id="menuTitle"></h2>
+
+      <div class="category-grid">
+        <button class="image-card" onclick="showBeaches()">
+          <img src="assets/plaza.jpg" alt="Plaže" />
+          <span id="beachesText"></span>
+        </button>
+
+        <button class="image-card" onclick="showShops()">
+          <img src="assets/trgovina.jpg" alt="Trgovine" />
+          <span id="shopsText"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="beachesScreen" class="screen">
+    <div class="card wide">
+      <p class="eyebrow" id="beachesEyebrow"></p>
+      <h2 id="beachesTitle"></h2>
+
+      <div class="places-grid">
+        <button class="image-card" onclick="startRoute('beach')">
+          <img src="assets/plaza2.jpg" alt="Public Beach" />
+          <span>Public Beach</span>
+        </button>
+      </div>
+
+      <button class="secondary-btn" onclick="showMenu()" id="beachesBack"></button>
+    </div>
+  </section>
+
+  <section id="shopsScreen" class="screen">
+    <div class="card wide">
+      <p class="eyebrow" id="shopsEyebrow"></p>
+      <h2 id="shopsTitle"></h2>
+
+      <div class="places-grid">
+        <button class="image-card" onclick="startRoute('ribola')">
+          <img src="assets/ribola1.jpg" alt="Ribola" />
+          <span>Ribola</span>
+        </button>
+
+        <button class="image-card" onclick="startRoute('konzum')">
+          <img src="assets/konzum1.jpg" alt="Konzum" />
+          <span>Konzum</span>
+        </button>
+
+        <button class="image-card" onclick="startRoute('pekara')">
+          <img src="assets/vita.jfif" alt="Pekara Vita" />
+          <span>Pekara Vita</span>
+        </button>
+      </div>
+
+      <button class="secondary-btn" onclick="showMenu()" id="shopsBack"></button>
+    </div>
+  </section>
+
+  <section id="mapScreen" class="screen map-screen">
+    <div class="map-topbar">
+      <button onclick="backFromMap()" id="mapBack"></button>
+      <button onclick="returnToApartment()" id="returnButton"></button>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="map-panel">
+      <h3 id="routeTitle"></h3>
+      <p id="routeStatus"></p>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
