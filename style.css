@@ -1,6 +1,6 @@
 :root {
   --bg: #f7f3ec;
-  --card: #ffffff;
+  --card: rgb(255,255,255);
   --text: #151922;
   --muted: #667085;
   --primary: lightblue;
@@ -15,19 +15,17 @@
   box-sizing: border-box;
 }
 
-
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background:
-        linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
-        url("assets/ma4.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)),
+    url("assets/ma4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text);
 }
-
 
 .screen {
   display: none;
@@ -45,20 +43,17 @@
   width: 100%;
   max-width: 520px;
   background: var(--card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
   border-radius: 30px;
   padding: 28px;
   text-align: center;
-  box-shadow: 0 24px 70px rgba(17, 24, 39, 0.12);
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border-radius: 28px;
-    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+  box-shadow: 0 24px 70px rgba(17, 24, 39, 0.22);
 }
 
 .card.wide {
-  max-width: 840px;
+  max-width: 620px;
 }
 
 .hero-card {
@@ -68,7 +63,7 @@
 
 .hero-img {
   width: 100%;
-  height: 260px;
+  height: 240px;
   object-fit: cover;
   display: block;
   background: #ddd;
@@ -80,7 +75,7 @@
 
 .eyebrow {
   margin: 0 0 10px;
-  color: var(--primary);
+  color: var(--primary-dark);
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -151,7 +146,7 @@ button {
   margin: 22px 0;
   padding: 16px;
   border-radius: 20px;
-  background: #eff6ff;
+  background: rgba(239, 246, 255, 0.9);
   text-align: left;
 }
 
@@ -164,7 +159,54 @@ button {
   font-size: 14px;
 }
 
-.category-grid,
+.vertical-card-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.wide-image-card {
+  position: relative;
+  width: 100%;
+  height: 132px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #111827;
+  color: white;
+  text-align: left;
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.18);
+}
+
+.wide-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.68);
+  transition: transform 0.25s ease;
+}
+
+.wide-image-card span {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  z-index: 2;
+  color: white;
+  font-size: 22px;
+  font-weight: 900;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
+.wide-image-card:active {
+  transform: scale(0.985);
+}
+
+.wide-image-card:active img {
+  transform: scale(1.04);
+}
+
 .places-grid {
   display: grid;
   gap: 18px;
@@ -178,9 +220,9 @@ button {
   border-radius: 24px;
   background: white;
   color: var(--text);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(231, 226, 218, 0.8);
   text-align: left;
-  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
 }
 
 .image-card:active {
@@ -203,10 +245,9 @@ button {
 }
 
 .map-screen {
-    background: none;
-    padding: 0;
+  padding: 0;
+  background: none;
 }
-
 
 #map {
   width: 100vw;
@@ -267,7 +308,6 @@ button {
 }
 
 @media (min-width: 720px) {
-  .category-grid,
   .places-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -278,6 +318,10 @@ button {
 }
 
 @media (max-width: 520px) {
+  .screen {
+    padding: 14px;
+  }
+
   .card {
     padding: 22px;
     border-radius: 26px;
@@ -288,7 +332,7 @@ button {
   }
 
   .hero-img {
-    height: 220px;
+    height: 210px;
   }
 
   h1 {
@@ -297,6 +341,14 @@ button {
 
   h2 {
     font-size: 26px;
+  }
+
+  .wide-image-card {
+    height: 118px;
+  }
+
+  .wide-image-card span {
+    font-size: 20px;
   }
 
   .image-card img {

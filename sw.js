@@ -1,4 +1,4 @@
-const CACHE_NAME = "apartman-vodic-final-v1";
+const CACHE_NAME = "apartman-vodic-final-v2";
 
 const FILES = [
   "./",
@@ -6,13 +6,17 @@ const FILES = [
   "./style.css",
   "./script.js",
   "./manifest.json",
+  "./assets/background.jpg",
   "./assets/hero.jpg",
   "./assets/beach-category.jpg",
   "./assets/shops-category.jpg",
   "./assets/public-beach.jpg",
   "./assets/ribola.jpg",
   "./assets/konzum.jpg",
-  "./assets/pekara-vita.jpg"
+  "./assets/pekara-vita.jpg",
+  "./assets/center.jpg",
+  "./assets/monaco.jpg",
+  "./assets/bus-station.jpg"
 ];
 
 self.addEventListener("install", event => {

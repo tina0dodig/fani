@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Apartmani Fani</title>
+  <title>Apartments Fani</title>
   <meta name="theme-color" content="#ffffff" />
 
   <link rel="manifest" href="manifest.json" />
@@ -17,10 +17,11 @@
 
   <section id="languageScreen" class="screen active">
     <div class="card hero-card">
-      <img src="assets/apartman.jpg" alt="Apartman Makarska" class="hero-img" />
+      <img src="assets/apartman.jpg" alt="Apartments Fani" class="hero-img" />
       <div class="card-content">
-        <p class="eyebrow">GUEST GUIDE</p>
-        <h1>Apartmans Fani</h1>
+        <p class="eyebrow">Guest Guide</p>
+        <h1>APARTMENTS FANI</h1>
+        <h3>Zagrebačka 47</h3>
         <p>Choose your language:</p>
 
         <div class="language-grid">
@@ -52,15 +53,30 @@
       <p class="eyebrow" id="menuEyebrow"></p>
       <h2 id="menuTitle"></h2>
 
-      <div class="category-grid">
-        <button class="image-card" onclick="showBeaches()">
+      <div class="vertical-card-list">
+        <button class="wide-image-card" onclick="showBeaches()">
           <img src="assets/plaza.jpg" alt="Plaže" />
           <span id="beachesText"></span>
         </button>
 
-        <button class="image-card" onclick="showShops()">
+        <button class="wide-image-card" onclick="showShops()">
           <img src="assets/trgovina.jpg" alt="Trgovine" />
           <span id="shopsText"></span>
+        </button>
+
+        <button class="wide-image-card" onclick="startRoute('center')">
+          <img src="assets/ma4.jpg" alt="Centar grada" />
+          <span id="centerText"></span>
+        </button>
+
+        <button class="wide-image-card" onclick="startRoute('monaco')">
+          <img src="assets/monaco.jpg" alt="Fast Food Monaco" />
+          <span>Fast Food Monaco</span>
+        </button>
+
+        <button class="wide-image-card" onclick="startRoute('busStation')">
+          <img src="assets/bus.jpg" alt="Autobusni kolodvor" />
+          <span id="busStationText"></span>
         </button>
       </div>
     </div>
